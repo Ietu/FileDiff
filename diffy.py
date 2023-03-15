@@ -61,7 +61,7 @@ elif len(sys.argv) == 4 and sys.argv[1] == "diff":
     lines2 = read_file(sys.argv[3])
     patch = generate_patch(lines1, lines2)
     for start_i, end_i, start_j, end_j in patch:
-        print("{},{c}{}".format(start_i + 1, end_i - start_i, ''.join(lines2[start_j:end_j])), end='')
+        print("{},{},{}".format(start_i + 1, end_i - start_i, ''.join(lines2[start_j:end_j])), end='')
 elif len(sys.argv) == 4 and sys.argv[1] == "patch":
     lines = read_file(sys.argv[2])
     with open(sys.argv[3], 'r') as f:
